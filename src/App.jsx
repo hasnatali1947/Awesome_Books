@@ -1,5 +1,5 @@
 import AddBook from './components/AddBook'
-import Contact from './components/contact'
+import Contact from './components/Contact'
 import ListBooks from './components/ListBooks';
 import { MyProvider } from './context/MyContext';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
