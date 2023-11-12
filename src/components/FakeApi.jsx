@@ -4,26 +4,37 @@ import React, { useState, useEffect } from 'react'
 
 const FakeApi = () => {
     const [apiData, setApiData] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        const Api = async () => {
-            const response = await axios.get("http://localhost:3000/data")
-            const data = response.data
-            console.log("Api data", data);
-            setApiData(data)
-        }
-        Api();
+        JokeApi();
     }, [])
+
+    const JokeApi = async () => {
+        try {
+            setLoading(true)
+            const response = await axios.get("https://api.chucknorris.io/jokes/random")
+            const data = response.data
+            setApiData(data)
+            setLoading(false)
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const handleJoke = () => {
+        JokeApi();
+    }
 
     return (
         <div className='apiContainer'>
             <h2>Fake Api</h2>
-            {apiData.map((value, index) => (
-                <div className='itemsDiv' key={index}>
-                    <span><b>Name: </b> {value.name}</span>
-                    <span><b>Occupation: </b> {value.occupation}</span>
+            {loading ? <span>Loading...</span> :
+                <div className='jokesBtnDiv'>
+                    <span> Jokes: {apiData.value}</span>
+                    <button className='handleJoke' onClick={handleJoke}>Another Joke</button>
                 </div>
-            ))}
+            }
         </div>
     )
 }

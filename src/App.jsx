@@ -17,15 +17,14 @@ const App = () => {
           <Navigation />
           <DataTime />
           <Routes>
-            <Route path='/' exact Component={ListBooks} />
-            <Route path='/FakeApi' exact Component={FakeApi} />
+            <Route path='/ListBooks' exact Component={ListBooks} />
+            <Route path='/' exact Component={FakeApi} />
             <Route path='/AddBook' exact Component={AddBook} />
             <Route path='/Contact' exact Component={Contact} />
           </Routes>
         </Router>
       </MyProvider>
     </div>
-
   )
 }
 
