@@ -90,6 +90,11 @@ header ul li {
     color: white;
 }
 
+.fakeApi {
+    background-color: rgb(244, 107, 107);
+    color: white;
+}
+
 .DateTime {
     position: absolute;
     top: 90px;
@@ -129,6 +134,15 @@ footer {
         z-index: 10;
     }
 
+    .DateTime {
+        position: absolute;
+        top: 2%;
+        right: 2.5%;
+        opacity: 0.5;
+        font-weight: 600;
+        font-size: small;
+    }
+
     .mobDivForBlur {
         height: 100vh;
         width: 100vw;
@@ -162,7 +176,8 @@ footer {
 
     .listSelected,
     .addNewSelected,
-    .contactSelected {
+    .contactSelected,
+    .fakeApi {
         background-color: rgb(53, 137, 255);
         color: white;
         margin: 0 10px;
@@ -182,6 +197,11 @@ footer {
         background-color: rgb(95, 95, 95);
     }
 
+    .fakeApi {
+        background-color: rgb(244, 107, 107);
+        color: white;
+    }    
+
     header h1 {
         font-weight: 400;
         font-size: 13px;
@@ -189,15 +209,6 @@ footer {
     }
 
     @media (max-width: 426px) {
-
-        .DateTime {
-            position: absolute;
-            top: 130px;
-            right: 2.5%;
-            opacity: 0.5;
-            font-weight: 600;
-            font-size: small;
-        }
 
         .mobMenu {
             display: flex;

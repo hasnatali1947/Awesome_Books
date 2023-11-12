@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "name": "Hasnat",
+            "occupation": "Software Developer"
+        },
+        {
+            "name": "Shah fahad",
+            "occupation": "Software Engineer"
+        },
+        {
+            "name": "Shayan",
+            "occupation": "Designer"
+        },
+        {
+            "name": "Arsalan",
+            "occupation": "Bussiness"
+        },
+        {
+            "name": "Huzaifa",
+            "occupation": "Speaker"
+        }
+    ] 
+}

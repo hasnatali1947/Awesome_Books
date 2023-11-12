@@ -8,6 +8,7 @@ const Navigation = () => {
     const [Listcolor, setListColor] = useState(true)
     const [AddNewcolor, setAddNewColor] = useState(false)
     const [AddContactColor, setAddContact] = useState(false)
+    const [AddApiColor, setAddApiColor] = useState(false)
     const [MobMenu, setmobMenu] = useState(false)
 
     const handleList = () => {
@@ -15,6 +16,7 @@ const Navigation = () => {
         setAddNewColor(false)
         setAddContact(false)
         setmobMenu(false)
+        setAddApiColor(false)
     }
 
     const handleAddNew = () => {
@@ -22,6 +24,7 @@ const Navigation = () => {
         setListColor(false)
         setAddContact(false)
         setmobMenu(false)
+        setAddApiColor(false)
     }
 
     const handleContact = () => {
@@ -29,10 +32,19 @@ const Navigation = () => {
         setAddNewColor(false)
         setListColor(false)
         setmobMenu(false)
+        setAddApiColor(false)
+    }
+
+    const handleApi = () => {
+        setAddApiColor(true)
+        setAddContact(false)
+        setAddNewColor(false)
+        setListColor(false)
+        setmobMenu(false)
     }
 
     const handleMobMenu = () => {
-       setmobMenu(!MobMenu)
+        setmobMenu(!MobMenu)
     }
 
     return (
@@ -44,17 +56,19 @@ const Navigation = () => {
                     <Link to="/" onClick={handleList}><li className={Listcolor ? 'listSelected' : 'Navbtn'} >List</li></Link>
                     <Link to="/AddBook" onClick={handleAddNew}><li className={AddNewcolor ? 'addNewSelected' : 'Navbtn'}>Add New</li></Link>
                     <Link to="/Contact" onClick={handleContact}><li className={AddContactColor ? 'contactSelected' : 'Navbtn'}>Contact</li></Link>
+                    <Link to="/FakeApi" onClick={handleApi}><li className={AddApiColor ? 'fakeApi' : 'Navbtn'}>Fake_Api</li></Link>
                 </ul>
             </header>
-            {MobMenu? 
-            <div className='mobDivForBlur'>
-                <ul className='MobNavbuttons'>
-                    <Link to="/" onClick={handleList}><li className={Listcolor ? 'listSelected' : 'Navbtn'} >List</li></Link>
-                    <Link to="/AddBook" onClick={handleAddNew}><li className={AddNewcolor ? 'addNewSelected' : 'Navbtn'}>Add New</li></Link>
-                    <Link to="/Contact" onClick={handleContact}><li className={AddContactColor ? 'contactSelected' : 'Navbtn'}>Contact</li></Link>
-                </ul>
-            </div>
-            : ""}
+            {MobMenu ?
+                <div className='mobDivForBlur'>
+                    <ul className='MobNavbuttons'>
+                        <Link to="/" onClick={handleList}><li className={Listcolor ? 'listSelected' : 'Navbtn'} >List</li></Link>
+                        <Link to="/AddBook" onClick={handleAddNew}><li className={AddNewcolor ? 'addNewSelected' : 'Navbtn'}>Add New</li></Link>
+                        <Link to="/Contact" onClick={handleContact}><li className={AddContactColor ? 'contactSelected' : 'Navbtn'}>Contact</li></Link>
+                        <Link to="/FakeApi" onClick={handleApi}><li className={AddApiColor ? 'fakeApi' : 'Navbtn'}>Fake_Api</li></Link>
+                    </ul>
+                </div>
+                : ""}
         </>
     )
 }

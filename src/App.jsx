@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./app/style/App.css"
 import DataTime from './components/DataTime';
 import Navigation from './components/Navigation';
+import FakeApi from './components/FakeApi';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
           <DataTime />
           <Routes>
             <Route path='/' exact Component={ListBooks} />
+            <Route path='/FakeApi' exact Component={FakeApi} />
             <Route path='/AddBook' exact Component={AddBook} />
             <Route path='/Contact' exact Component={Contact} />
           </Routes>
